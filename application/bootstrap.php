@@ -1,13 +1,15 @@
 <?php
 
 spl_autoload_register(
-    function ($class) {
-        if (file_exists(APPPATH.'classes/'.$class.EXT))
-            include APPPATH.'classes/'.$class.EXT;
-        elseif (file_exists(COREPATH.$class.EXT))
-            include COREPATH.$class.EXT;
+    function ($class_name) {
+        $class_path = strtolower(str_replace('_', DIRECTORY_SEPARATOR, $class_name));
+        if (file_exists(APPPATH.'classes/'.$class_path.EXT))
+            include APPPATH.'classes/'.$class_path.EXT;
+        elseif (file_exists(COREPATH.$class_path.EXT))
+            include COREPATH.$class_path.EXT;
         else
-            throw new Exception('Class '.$class.' not found!');
+            die('Class '.$class_name.' not found!');
+            //throw new Exception('Class '.$class_name.' not found!');
     }
 );
 

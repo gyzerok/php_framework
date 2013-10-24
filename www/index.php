@@ -18,4 +18,4 @@ define('APPPATH', realpath($application).DIRECTORY_SEPARATOR);
 define('COREPATH', realpath($core).DIRECTORY_SEPARATOR);
 
 
-require_once(APPPATH.'bootstrap'.EXT);
+include APPPATH.'bootstrap'.EXT;
