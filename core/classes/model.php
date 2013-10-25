@@ -34,7 +34,12 @@ abstract class Model {
 
     public function find_all()
     {
-        return $this->database->select_query('SELECT * FROM '.$this->table_name, get_class($this));
+        $ret = $this->database->select_query('SELECT * FROM '.$this->table_name, get_class($this));
+
+        if ( ! is_array($ret))
+            $ret = array($ret);
+
+        return $ret;
     }
 
     public function values(array $values)
