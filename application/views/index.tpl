@@ -5,7 +5,7 @@
         <label>Заголовок</label><br/>
         <input type="text" name="title" value="" /><br/>
         <label>Текст</label><br/>
-        <textarea name="text"></textarea>><br/>
+        <textarea name="text"></textarea><br/>
         <button type="submit">Добавить новость</button>
     </form>
     <br/>
