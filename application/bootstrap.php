@@ -10,8 +10,5 @@ spl_autoload_register(
 
         if (file_exists(COREPATH.'classes/'.$class_path.EXT))
             return include COREPATH.'classes/'.$class_path.EXT;
-
-        die('Class '.$class_name.' not found!');
-        //throw new Exception('Class '.$class_name.' not found!');
     }
 );

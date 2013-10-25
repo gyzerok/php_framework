@@ -4,6 +4,8 @@ class Controller_Welcome extends Controller {
 
     public function action_index()
     {
-        $this->response->body('Hello, World!');
+        $this->view->assign('name', 'Vasya');
+
+        $this->view->display('index.tpl');
     }
 }
