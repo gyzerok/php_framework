@@ -37,7 +37,7 @@ class Database {
 
         $query->setFetchMode(PDO::FETCH_CLASS, $model);
 
-        $rows_count = $query->fetchColumn();
+        $rows_count = $query->rowCount();
 
         switch ($rows_count)
         {
