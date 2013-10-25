@@ -1,5 +1,20 @@
 {extends "layout.tpl"}
 
 {block "content"}
-    <h1>Hello, World! My name is {$name}</h1>
+    <form action="/default/add" method="post">
+        <label>Заголовок</label><br/>
+        <input type="text" name="title" value="" /><br/>
+        <label>Текст</label><br/>
+        <textarea name="text"></textarea>><br/>
+        <button type="submit">Добавить новость</button>
+    </form>
+    <br/>
+
+    {if count($news)}
+        {foreach $news as $item}
+            <h2>{$item->title}</h2>
+            <p>{$item->text}</p>
+            <br/>
+        {/foreach}
+    {/if}
 {/block}

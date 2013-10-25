@@ -4,7 +4,7 @@ class Route {
 
     public static function parse(Request $request)
     {
-        $controller_name = 'Welcome';
+        $controller_name = 'Default';
         $action_name = 'index';
 
         $routes = explode('/', $_SERVER['REQUEST_URI']);
