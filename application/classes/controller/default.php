@@ -15,6 +15,6 @@ class Controller_Default extends Controller {
     {
         Model::factory('News')->values($_POST)->save();
 
-        $this->view->display('index.tpl');
+        $this->view->display('success.tpl');
     }
 }
