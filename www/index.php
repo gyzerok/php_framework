@@ -19,3 +19,10 @@ define('COREPATH', realpath($core).DIRECTORY_SEPARATOR);
 
 
 include APPPATH.'bootstrap'.EXT;
+
+if (PHP_SAPI != 'cli')
+{
+    $request = new Request;
+
+    echo $request->dispatch()->execute()->body();
+}
